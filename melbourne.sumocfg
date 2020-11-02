@@ -1,7 +1,0 @@
-<configuration>
-    <input>
-        <net-file value="melbourne_larger.net.xml"/>
-        <route-files value="melbourne.rou.xml"/>
-    </input>
-
-</configuration>

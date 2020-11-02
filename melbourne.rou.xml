@@ -1,7 +1,0 @@
- <routes>
-
-      <vType id="reroutingType" vClass="bicycle" maxSpeed="4">
-        <param key="has.rerouting.device" value="true"/>
-      </vType>
-
- </routes>
