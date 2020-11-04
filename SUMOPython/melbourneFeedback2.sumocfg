@@ -1,0 +1,6 @@
+<configuration>
+    <input>
+        <net-file value="melbourne.net.xml"/>
+        <route-files value="melbourne.rou.xml"/>
+    </input>
+</configuration>

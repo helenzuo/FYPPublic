@@ -310,7 +310,7 @@ class Station(object):
                 rate = 0
         self.otherStations.append(StationRelation(targetStat, self.name + "To" + targetStat.name, minCost, rate))
 
-
+# Station relation class
 class StationRelation(object):
     def __init__(self, arrival, name, distance, rate):
         self.arrive = arrival  # arriving station
@@ -322,7 +322,7 @@ class StationRelation(object):
     def updateLastTime(self, arrivingBike):
         self.timeTaken = arrivingBike.lastTrip[2] - arrivingBike.lastTrip[0]
 
-
+# bike class
 class Bike(object):
     def __init__(self, bike_no, state):
         self.id = str(bike_no)
@@ -330,7 +330,6 @@ class Bike(object):
         self.lastTrip = [int, Station, int, Station, int, True]
         self.state = state
         self.checkedOutTo = Customer
-
 
 
 class Customer(object):
@@ -375,7 +374,6 @@ def run():
         stationDynamic.value = json.dumps(dynamicInfo)
 
         thread.join(1)  # pause sumo simulation thread for 1s to allow server to listen to client (blocks the calling thread)
-
 
         # Have simulation respond to requests made by user through the android app here:
         if incoming.value != "":
@@ -539,8 +537,6 @@ def run():
             stations[ind].predictedOcc = np.reshape(np.delete(stations[ind].predictedOcc, 0, 0), (-1, 2))
             stations[ind].predictedOcc = np.append(stations[ind].predictedOcc, [stations[ind].predictedOcc[-1][0] + 1, stations[ind].predictedOcc[-1][1]])
             stations[ind].predictedOcc = np.reshape(stations[ind].predictedOcc, (-1, 2))
-
-
 
         # Go to the next time step
         step += 1
